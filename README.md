@@ -8,7 +8,7 @@
 <!-- [![Build Status](https://johnpapa.visualstudio.com/vscode-read-time/_apis/build/status/VS%20Code%ReadTime%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-read-time/_build/latest?definitionId=3&branchName=master)
  -->
 
-![Read Time Icon](./resources/icon.png 'Read Time') A Visual Studio Code extension that subtly changes the workspace color of your workspace. Ideal when you have multiple VS Code instances and you want to quickly identify which is which.
+![Read Time Icon](./resources/icon.png 'Read Time') A Visual Studio Code extension ideal for writers who want an estimate how for long it may take to read your markdown.
 
 ## Install
 
