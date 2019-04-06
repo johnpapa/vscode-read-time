@@ -2,7 +2,7 @@
   "name": "read-time",
   "displayName": "Read Time",
   "description": "Perfect for estimating how long it may take to read your text.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "preview": true,
   "icon": "resources/icon.png",
   "galleryBanner": {
@@ -12,7 +12,7 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnpapa/vscode-presenter-pro.git"
+    "url": "https://github.com/johnpapa/vscode-read-time-pro.git"
   },
   "keywords": [
     "Markdown",
