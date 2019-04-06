@@ -22,16 +22,14 @@ Commands can be found in the command palette. Look for commands beginning with `
 
 ## Settings
 
-| Property          | Description                                                 |
-| ----------------- | ----------------------------------------------------------- |
-| read-time.enabled | Specifies whether it is enabled                             |
-| read-time.delay   | Specifies how long Read Time will wait before re-estimating |
+| Property          | Description                     |
+| ----------------- | ------------------------------- |
+| read-time.enabled | Specifies whether it is enabled |
 
 ## Commands
 
 | Command                          | Description                   |
 | -------------------------------- | ----------------------------- |
-| Read Time: Estimate Read Time    | Estimates the read time       |
 | Read Time: Toggle Enable/Disable | Enables or disables read time |
 
 ## Roadmap

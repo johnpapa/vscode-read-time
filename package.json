@@ -29,17 +29,27 @@
   ],
   "activationEvents": [
     "*",
-    "onCommand:read-time.estimateReadTime"
+    "onCommand:read-time.estimateReadTime",
+    "onCommand:read-time.toggleEnable"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "read-time.estimateReadTime",
-        "title": "Estimate Read Time",
+        "command": "read-time.toggleEnable",
+        "title": "Toggle to Enable/Disable",
         "category": "Read Time"
       }
-    ]
+    ],
+    "configuration": {
+      "properties": {
+        "read-time.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specifies whether Read Time is enabled."
+        }
+      }
+    }
   },
   "scripts": {
     "package": "npx vsce package",

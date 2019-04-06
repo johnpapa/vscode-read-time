@@ -1,8 +1,14 @@
 import { window } from 'vscode';
 import { getReadingTime } from './readtime';
 import { updateStatusBar, clearStatusBar } from './statusbar';
+import { updateEnabledSetting, getEnabledSetting } from './configuration';
 
-export function estimateReadTimeHandler() {
+export function estimateReadTime() {
+  const isEnabled = getEnabledSetting();
+  if (!isEnabled) {
+    clearStatusBar();
+    return;
+  }
   let editor = getCurrentTextEditor();
   if (!editor) {
     return;
@@ -10,6 +16,15 @@ export function estimateReadTimeHandler() {
   const { document } = editor;
   const readingTimeData = getReadingTime(document);
   updateStatusBar(document, readingTimeData.text);
+}
+
+export function toggleEnableHandler() {
+  const isEnabled = getEnabledSetting();
+  const newState = !isEnabled;
+  updateEnabledSetting(newState);
+  if (!newState) {
+    clearStatusBar();
+  }
 }
 
 function getCurrentTextEditor() {
