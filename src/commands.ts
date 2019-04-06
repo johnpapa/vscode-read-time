@@ -15,7 +15,7 @@ export function estimateReadTime() {
   }
   const { document } = editor;
   const readingTimeData = getReadingTime(document);
-  updateStatusBar(document, readingTimeData.text);
+  updateStatusBar(document, readingTimeData);
 }
 
 export async function toggleEnableHandler() {
