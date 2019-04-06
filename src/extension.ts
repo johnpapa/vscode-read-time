@@ -14,12 +14,10 @@ export function activate(context: vscode.ExtensionContext) {
     )
   );
 
+  window.onDidChangeActiveTextEditor(handleChangeActiveTextEditor);
   workspace.onDidChangeTextDocument(handleDocChanges);
-  vscode.window.onDidChangeActiveTextEditor(handleChangeActiveTextEditor);
-  vscode.workspace.onDidOpenTextDocument(handleDocOpen);
-  vscode.workspace.onDidCloseTextDocument(handleDocClose);
-
-  // todo: need an on activate ?
+  workspace.onDidOpenTextDocument(handleDocOpen);
+  workspace.onDidCloseTextDocument(handleDocClose);
 }
 
 function handleChangeActiveTextEditor(e: vscode.TextEditor | undefined) {
@@ -80,7 +78,11 @@ function updateStatusBar(document: TextDocument) {
 }
 
 function getReadingTime(textToRead: string) {
-  const readingData = readingTime(textToRead);
+  // const options = {
+  //   wordBound: () => {},
+  //   wordsPerMinute: 200
+  // };
+  const readingData = readingTime(textToRead); //, options); // TODO: API for npm package is not up to date.
   const { text, minutes, time, words } = readingData;
   // vscode.window.showInformationMessage(`${text}`);
   return readingData;
