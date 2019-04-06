@@ -88,7 +88,7 @@ suite('changes to configuration', () => {
     });
 
     // TODO: status bar is never showing up under test!
-    test.skip('when file is markdown, the status bar has text', async () => {
+    test.only('when file is markdown, the status bar has text', async () => {
       // Open a file
       const options = {
         content: markdown.medium,
@@ -101,9 +101,8 @@ suite('changes to configuration', () => {
       const editor = await window.showTextDocument(doc, 1, true);
       // Status bar should have text (and thus visible)
       const statusBarItem = getStatusBarItem();
-      statusBarItem.text = 'asdasdasdasd';
-      statusBarItem.show();
-
+      // statusBarItem.text = 'asdasdasdasd';
+      // statusBarItem.show();
       assert.ok(!!statusBarItem.text && statusBarItem.text.length);
     });
   });
