@@ -1,12 +1,11 @@
 import * as vscode from 'vscode';
-import { Sections, Settings, extSuffix } from './models';
+import { Sections, Settings, extensionShortName } from './models';
 import { Logger } from './logging';
 
 const { workspace } = vscode;
 
 export function getEnabledSetting() {
-  let foo = readConfiguration<boolean>(Settings.Enabled);
-  return foo;
+  return readConfiguration<boolean>(Settings.Enabled);
 }
 
 export async function updateEnabledSetting(value: boolean) {
@@ -28,7 +27,7 @@ export async function updateGlobalConfiguration<T>(
   value?: T | undefined
 ) {
   let config = vscode.workspace.getConfiguration();
-  const section = `${extSuffix}.${setting}`;
+  const section = `${extensionShortName}.${setting}`;
   Logger.info('Updating the user settings with the following changes:');
   Logger.info(`${section} = ${value}`, true);
   return await config.update(section, value, vscode.ConfigurationTarget.Global);

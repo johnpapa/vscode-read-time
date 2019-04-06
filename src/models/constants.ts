@@ -1,1 +1,2 @@
-export const extSuffix = 'read-time';
+export const extensionId = 'johnpapa.read-time';
+export const extensionShortName = 'readTime';

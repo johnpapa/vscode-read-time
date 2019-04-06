@@ -16,5 +16,4 @@ export interface IConfiguration {
 
 export interface IReadTimeSettings {
   enabled: boolean;
-  delay: number;
 }

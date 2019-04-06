@@ -25,15 +25,31 @@ Commands can be found in the command palette. Look for commands beginning with `
 
 ## Settings
 
-| Property          | Description                     |
-| ----------------- | ------------------------------- |
-| read-time.enabled | Specifies whether it is enabled |
+| Property         | Description                     |
+| ---------------- | ------------------------------- |
+| readTime.enabled | Specifies whether it is enabled |
 
 ## Commands
 
 | Command                          | Description                   |
 | -------------------------------- | ----------------------------- |
 | Read Time: Toggle Enable/Disable | Enables or disables read time |
+
+### FAQ
+
+## Why Isn't the Icon is Appearing in the Status Bar?
+
+There is only so much room in the status bar and the Read Time status bar icon may have become a casualty and disappeared. You can test this by zooming out of your vs code a few times so the text is very small. This will also zoom out the status bar. If the status bar icon was a casualty, then it would reappear when you zoom out.
+
+The Read Time icon is very slim (just an icon and a number). However if it is not appearing you can try to change your settings for other items in the status bar to make them disappear. In other word, clean up your status bar by hiding things you do not want to see. Here is one example where I hid a few things that were in my status bar.
+
+```json
+  "workbench.statusBar.feedback.visible": false,
+  "debug.showInStatusBar": "never",
+  "azure.showSignedInEmail": false,
+  "liveshare.showInStatusBar": "whileCollaborating",
+  "spellright.statusBarIndicator": false
+```
 
 ## Roadmap
 
