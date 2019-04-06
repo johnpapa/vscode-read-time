@@ -1,65 +1,64 @@
-# read-time README
+# Read Time for Visual Studio Code
 
-This is the README for your extension "read-time". After writing up a brief description, we recommend including the following sections.
+[![Badge for version for Visual Studio Code extension johnpapa.vscode-read-time](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-read-time.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-read-time&wt.mc_id=vscodepeacock-github-jopapa) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-read-time)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.vscode-read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-read-time) [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/johnpapa/vscode-read-time.svg)](https://greenkeeper.io/)
+
+[![Build Status](https://johnpapa.visualstudio.com/vscode-read-time/_apis/build/status/VS%20Code%20Peacock%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-read-time/_build/latest?definitionId=3&branchName=master)
+
+![Read Time Icon](./resources/readtime-icon-small.png 'Read Time') A Visual Studio Code extension that subtly changes the workspace color of your workspace. Ideal when you have multiple VS Code instances and you want to quickly identify which is which.
+
+## Install
+
+1. Open **Extensions** sidebar panel in Visual Studio Code. `View → Extensions`
+1. Search for `Reda Time`
+1. Click **Install**
+1. Click **Reload**, if required
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Commands can be found in the command palette. Look for commands beginning with `Peacock:`
 
-For example if there is an image subfolder under your extension project workspace:
+- Display the estimated minutes to read your document in the status bar
 
-\!\[feature X\]\(images/feature-x.png\)
+## Settings
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+| Property          | Description                                                 |
+| ----------------- | ----------------------------------------------------------- |
+| read-time.enabled | Specifies whether it is enabled                             |
+| read-time.delay   | Specifies how long Read Time will wait before re-estimating |
 
-## Requirements
+## Commands
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+| Command                          | Description                   |
+| -------------------------------- | ----------------------------- |
+| Read Time: Estimate Read Time    | Estimates the read time       |
+| Read Time: Toggle Enable/Disable | Enables or disables read time |
 
-## Extension Settings
+## Roadmap
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+There are many features in the roadmap. Please refer to the [issues list and feel free to grab one and contribute](https://github.com/johnpapa/vscode-read-time/issues)!
 
-For example:
+## Changes
 
-This extension contributes the following settings:
+See the [CHANGELOG](CHANGELOG.md) for the latest changes.
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+## Credits
 
-## Known Issues
+Inspiration comes in many forms. These folks and teams have contributed either through ideas, issues, pull requests, or guidance. Thank you!
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=vscodepeacock-github-jopapa)
 
-## Release Notes
+- Here are some great [examples for extensions](https://github.com/Microsoft/vscode-extension-samples) from the VS Code team
 
-Users appreciate release notes as you update your extension.
+## Try the Code
 
-### 1.0.0
+If you want to try the extension out start by cloning this repo, `cd` into the folder, and then run `npm install`.
 
-Initial release of ...
+Then you can run the debugger for the launch configuration `Run Extension`. Set breakpoints, step through the code, and enjoy!
 
-### 1.0.1
+## Resources
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- [Get VS Code](https://code.visualstudio.com/?wt.mc_id=readtime-github-jopapa)
+- [Create your first VS Code extension](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=readtime-github-jopapa)
+- [VS Code Extension API](https://code.visualstudio.com/api/references/vscode-api?wt.mc_id=readtime-github-jopapa)
+- [Learn how to add WebPack bundles to your favorite extensions](https://code.visualstudio.com/updates/v1_32#_bundling-extensions-with-webpack?wt.mc_id=readtime-github-jopapa)
