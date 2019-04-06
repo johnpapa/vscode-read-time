@@ -1,8 +1,8 @@
 {
   "name": "read-time",
   "displayName": "Read Time",
-  "description": "Perfect for estimating how long it may take to read your text.",
-  "version": "0.1.2",
+  "description": "Perfect for writers who want an estimate how for long it may take to read your markdown.",
+  "version": "0.1.3",
   "preview": true,
   "icon": "resources/icon.png",
   "galleryBanner": {
