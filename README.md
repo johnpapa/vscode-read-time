@@ -10,7 +10,7 @@
 ## Install
 
 1. Open **Extensions** sidebar panel in Visual Studio Code. `View → Extensions`
-1. Search for `Reda Time`
+1. Search for `Read Time`
 1. Click **Install**
 1. Click **Reload**, if required
 
