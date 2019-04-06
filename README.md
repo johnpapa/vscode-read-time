@@ -25,9 +25,9 @@ Commands can be found in the command palette. Look for commands beginning with `
 
 ## Settings
 
-| Property          | Description                     |
-| ----------------- | ------------------------------- |
-| read-time.enabled | Specifies whether it is enabled |
+| Property         | Description                     |
+| ---------------- | ------------------------------- |
+| readTime.enabled | Specifies whether it is enabled |
 
 ## Commands
 

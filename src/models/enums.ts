@@ -1,9 +1,9 @@
 export enum Commands {
-  toggleEnable = 'read-time.toggleEnable'
+  toggleEnable = 'readTime.toggleEnable'
 }
 
 export enum Sections {
-  userReadTimeSection = 'read-time'
+  userReadTimeSection = 'readTime'
 }
 
 export enum Settings {

@@ -29,21 +29,20 @@
   ],
   "activationEvents": [
     "*",
-    "onCommand:read-time.estimateReadTime",
-    "onCommand:read-time.toggleEnable"
+    "onCommand:readTime.toggleEnable"
   ],
   "main": "./dist/extension",
   "contributes": {
     "commands": [
       {
-        "command": "read-time.toggleEnable",
+        "command": "readTime.toggleEnable",
         "title": "Toggle to Enable/Disable",
         "category": "Read Time"
       }
     ],
     "configuration": {
       "properties": {
-        "read-time.enabled": {
+        "readTime.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Specifies whether Read Time is enabled."
