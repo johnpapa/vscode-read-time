@@ -21,18 +21,23 @@
     "Tools"
   ],
   "publisher": "johnpapa",
-  "categories": [
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.helloWorld"
+    "*",
+    "onCommand:read-time.estimateReadTime"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.helloWorld",
-        "title": "Hello World"
+        "command": "read-time.estimateReadTime",
+        "title": "Estimate Read Time",
+        "category": "Read Time"
       }
     ]
   },

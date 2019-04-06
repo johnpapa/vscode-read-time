@@ -1,27 +1,87 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+import * as readingTime from 'reading-time';
+
 import * as vscode from 'vscode';
+import { StatusBarItem, TextDocument, window, workspace } from 'vscode';
+import { Commands } from './models';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+  console.log('Congratulations, your extension "read-time" is now active!');
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-		console.log('Congratulations, your extension "read-time" is now active!');
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      Commands.estimateReadTime,
+      estimateReadTimeHandler
+    )
+  );
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
+  workspace.onDidChangeTextDocument(handleDocChanges);
+  vscode.window.onDidChangeActiveTextEditor(handleChangeActiveTextEditor);
+  vscode.workspace.onDidOpenTextDocument(handleDocOpen);
+  vscode.workspace.onDidCloseTextDocument(handleDocClose);
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
-	});
-
-	context.subscriptions.push(disposable);
+  // todo: need an on activate ?
 }
 
-// this method is called when your extension is deactivated
+function handleChangeActiveTextEditor(e: vscode.TextEditor | undefined) {
+  estimateReadTimeHandler();
+}
+function handleDocClose(document: TextDocument) {
+  clearStatusBar();
+}
+function handleDocOpen(document: TextDocument) {
+  estimateReadTimeHandler();
+}
+
+function handleDocChanges(e: vscode.TextDocumentChangeEvent) {
+  estimateReadTimeHandler();
+}
+
 export function deactivate() {}
+
+let statusBarItem: StatusBarItem;
+
+function getCurrentTextEditor() {
+  let editor = window.activeTextEditor;
+  if (!editor) {
+    statusBarItem.hide();
+    return;
+  }
+  return editor;
+}
+
+function estimateReadTimeHandler() {
+  if (!statusBarItem) {
+    statusBarItem = window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+  }
+
+  let editor = getCurrentTextEditor();
+  if (!editor) {
+    return;
+  }
+  const { document } = editor;
+
+  updateStatusBar(document);
+}
+
+function clearStatusBar() {
+  statusBarItem.text = '';
+  statusBarItem.hide();
+}
+
+function updateStatusBar(document: TextDocument) {
+  if (document.languageId === 'markdown') {
+    const textToRead = document.getText();
+    const { text, minutes, time, words } = getReadingTime(textToRead);
+    statusBarItem.text = `$(book) ${text}`;
+    statusBarItem.show();
+  } else {
+    clearStatusBar();
+  }
+}
+
+function getReadingTime(textToRead: string) {
+  const readingData = readingTime(textToRead);
+  const { text, minutes, time, words } = readingData;
+  // vscode.window.showInformationMessage(`${text}`);
+  return readingData;
+}
