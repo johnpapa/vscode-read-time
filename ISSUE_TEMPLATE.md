@@ -6,7 +6,7 @@
 
 > Windows 7, 8 or 10. Linux (which distribution). macOS(Yosemite ? El Capitan? Sierra ?)
 > VS Code version and whether it is stable or insiders?
-> Version of Peacock
+> Version of Read Time
 
 ## Repro steps
 

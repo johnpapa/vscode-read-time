@@ -1,5 +1,4 @@
 export enum Commands {
-  estimateReadTime = 'read-time.estimateReadTime',
   toggleEnable = 'read-time.toggleEnable'
 }
 
@@ -8,6 +7,5 @@ export enum Sections {
 }
 
 export enum Settings {
-  Enabled = 'enabled',
-  EstimationDelay = 'estimation-delay'
+  Enabled = 'enabled'
 }
