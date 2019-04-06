@@ -2,12 +2,12 @@
   "name": "read-time",
   "displayName": "Read Time",
   "description": "Perfect for estimating how long it may take to read your text.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "preview": true,
   "icon": "resources/icon.png",
   "galleryBanner": {
-    "color": "#0273D4",
-    "theme": "dark"
+    "color": "#fff",
+    "theme": "light"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
