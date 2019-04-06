@@ -10,7 +10,11 @@ let _statusBarItem: StatusBarItem;
 
 export function getStatusBarItem() {
   if (!_statusBarItem) {
-    _statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
+    const priority = 100; // High priority since this is important in a markdown file
+    _statusBarItem = window.createStatusBarItem(
+      StatusBarAlignment.Left,
+      priority
+    );
   }
   return _statusBarItem;
 }
