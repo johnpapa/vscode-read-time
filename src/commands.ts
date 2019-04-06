@@ -18,10 +18,10 @@ export function estimateReadTime() {
   updateStatusBar(document, readingTimeData.text);
 }
 
-export function toggleEnableHandler() {
+export async function toggleEnableHandler() {
   const isEnabled = getEnabledSetting();
   const newState = !isEnabled;
-  updateEnabledSetting(newState);
+  await updateEnabledSetting(newState);
   if (!newState) {
     clearStatusBar();
   }
