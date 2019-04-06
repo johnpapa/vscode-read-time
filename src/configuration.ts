@@ -5,8 +5,7 @@ import { Logger } from './logging';
 const { workspace } = vscode;
 
 export function getEnabledSetting() {
-  let foo = readConfiguration<boolean>(Settings.Enabled);
-  return foo;
+  return readConfiguration<boolean>(Settings.Enabled);
 }
 
 export async function updateEnabledSetting(value: boolean) {

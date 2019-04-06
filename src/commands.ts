@@ -1,4 +1,4 @@
-import { window } from 'vscode';
+import * as vscode from 'vscode';
 import { getReadingTime } from './readtime';
 import { updateStatusBar, clearStatusBar } from './statusbar';
 import { updateEnabledSetting, getEnabledSetting } from './configuration';
@@ -28,7 +28,7 @@ export function toggleEnableHandler() {
 }
 
 function getCurrentTextEditor() {
-  let editor = window.activeTextEditor;
+  let editor = vscode.window.activeTextEditor;
   if (!editor) {
     clearStatusBar();
     return;
