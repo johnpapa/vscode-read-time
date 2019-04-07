@@ -3,7 +3,6 @@ import { TextDocument } from 'vscode';
 import { ReadingTimeData } from './models';
 
 export function getReadingTime(document: TextDocument) {
-  //textToRead: string) {
   let readingTimeData = new ReadingTimeData();
   if (document.languageId === 'markdown') {
     const textToRead = document.getText();
@@ -14,7 +13,14 @@ export function getReadingTime(document: TextDocument) {
     //   wordsPerMinute: 200
     // };
     // readingTimeData = readingTime(textToRead, options); // TODO: API for npm package is not up to date.
+
     readingTimeData = readingTime(textToRead);
   }
-  return readingTimeData;
+  return modifyReadingData(readingTimeData);
+}
+
+function modifyReadingData(readingTimeData: ReadingTimeData) {
+  const minutes = Math.round(readingTimeData.minutes);
+  const text = `${minutes} minute read`;
+  return { ...readingTimeData, roundedMinutes: minutes, text };
 }

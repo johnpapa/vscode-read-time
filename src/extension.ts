@@ -11,6 +11,7 @@ import {
 import { Commands } from './models';
 import { estimateReadTime, toggleEnableHandler } from './commands';
 import { Logger } from './logging';
+import { getEnabledSetting } from './configuration';
 
 export function activate(context: ExtensionContext) {
   const { subscriptions } = context;
@@ -26,6 +27,12 @@ function addSubscriptions({ subscriptions }: ExtensionContext) {
 
   subscriptions.push(
     workspace.onDidChangeConfiguration((e: ConfigurationChangeEvent) => {
+      const isEnabled = getEnabledSetting();
+      Logger.info(
+        `Configuration changed. Read Time is now ${
+          isEnabled ? 'enabled' : 'disabled'
+        }`
+      );
       estimateReadTime();
     })
   );

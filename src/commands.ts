@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { getReadingTime } from './readtime';
 import { updateStatusBar, clearStatusBar } from './statusbar';
 import { updateEnabledSetting, getEnabledSetting } from './configuration';
+import { Logger } from './logging';
 
 export function estimateReadTime() {
   const isEnabled = getEnabledSetting();
@@ -14,8 +15,15 @@ export function estimateReadTime() {
     return;
   }
   const { document } = editor;
-  const readingTimeData = getReadingTime(document);
-  updateStatusBar(document, readingTimeData);
+  if (document.languageId === 'markdown') {
+    const readingTimeData = getReadingTime(document);
+    updateStatusBar(document, readingTimeData);
+    Logger.info(
+      `Estimated ${readingTimeData.minutes} minutes (${
+        readingTimeData.roundedMinutes
+      } rounded) read time of ${document.fileName} at ${new Date().toString()}`
+    );
+  }
 }
 
 export async function toggleEnableHandler() {
