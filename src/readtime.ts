@@ -7,11 +7,14 @@ export function getReadingTime(document: TextDocument) {
   let readingTimeData = new ReadingTimeData();
   if (document.languageId === 'markdown') {
     const textToRead = document.getText();
+    // TODO: if my PR gets accepted for
+    // reading-time npm package,
+    // we add this option and expose a setting
     // const options = {
-    //   wordBound: () => {},
     //   wordsPerMinute: 200
     // };
-    readingTimeData = readingTime(textToRead); //, options); // TODO: API for npm package is not up to date.
+    // readingTimeData = readingTime(textToRead, options); // TODO: API for npm package is not up to date.
+    readingTimeData = readingTime(textToRead);
   }
   return readingTimeData;
 }
