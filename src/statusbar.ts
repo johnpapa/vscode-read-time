@@ -33,9 +33,9 @@ export function updateStatusBar(
 ) {
   const statusBarItem = getStatusBarItem();
   if (document.languageId === 'markdown') {
-    const roundedMinutes = Math.round(readingTimeData.minutes).toString();
+    const roundedMinutes = Math.round(readingTimeData.minutes);
     statusBarItem.text = `$(book) ${roundedMinutes}`;
-    statusBarItem.tooltip = readingTimeData.text;
+    statusBarItem.tooltip = `${roundedMinutes} minute read`;
     statusBarItem.show();
   } else {
     clearStatusBar();
