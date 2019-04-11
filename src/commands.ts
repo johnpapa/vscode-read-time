@@ -23,6 +23,8 @@ export function estimateReadTime() {
         readingTimeData.roundedMinutes
       } rounded) read time of ${document.fileName} at ${new Date().toString()}`
     );
+  } else {
+    clearStatusBar();
   }
 }
 
