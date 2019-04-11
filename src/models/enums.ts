@@ -7,6 +7,6 @@ export enum Sections {
 }
 
 export enum Settings {
-  Enabled = 'enabled'
+  Enabled = 'enabled',
+  WordsPerMinute = 'wordsPerMinute'
 }
-

@@ -29,9 +29,10 @@ Features include:
 
 ## Settings
 
-| Property         | Description                     |
-| ---------------- | ------------------------------- |
-| readTime.enabled | Specifies whether it is enabled |
+| Property                | Description                                                    |
+| ----------------------- | -------------------------------------------------------------- |
+| readTime.enabled        | Specifies whether it is enabled                                |
+| readTime.wordsPerMinute | Specifies the estimated words per minute that a user may read. |
 
 ## Commands
 

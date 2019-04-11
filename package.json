@@ -2,7 +2,7 @@
   "name": "read-time",
   "displayName": "Read Time",
   "description": "Perfect for writers who want an estimate how for long it may take to read your markdown.",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "preview": true,
   "icon": "resources/icon.png",
   "galleryBanner": {
@@ -46,6 +46,11 @@
           "type": "boolean",
           "default": true,
           "description": "Specifies whether Read Time is enabled."
+        },
+        "readTime.wordsPerMinute": {
+          "type": "number",
+          "default": 200,
+          "description": "Specifies the estimated words per minute that a user may read."
         }
       }
     }
@@ -66,12 +71,12 @@
     "@types/node": "^10.12.21",
     "ts-loader": "^5.3.3",
     "tslint": "^5.15.0",
-    "typescript": "^3.4.2",
+    "typescript": "^3.4.3",
     "vscode": "^1.1.33",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "reading-time": "^1.1.3"
+    "reading-time": "^1.2.0"
   }
 }
