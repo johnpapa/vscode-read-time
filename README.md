@@ -29,9 +29,31 @@ Features include:
 
 ## Settings
 
-| Property         | Description                     |
-| ---------------- | ------------------------------- |
-| readTime.enabled | Specifies whether it is enabled |
+| Property                | Description                                                    |
+| ----------------------- | -------------------------------------------------------------- |
+| readTime.enabled        | Specifies whether it is enabled                                |
+| readTime.fileTypes      | Specifies the file types to estimate the time to read.         |
+| readTime.wordsPerMinute | Specifies the estimated words per minute that a user may read. |
+
+### fileTypes
+
+Defaults to `["markdown"]`, but can be an array of any file types (languageId) that you want to estimate read time.
+
+```json
+"readTime.fileTypes": [
+  "markdown",
+  "plaintext",
+  "yaml"
+]
+```
+
+### wordsPerMinute
+
+Defaults to `200`, but can be any number representing the number of words per minute you wish to use in the calculation.
+
+```json
+"readTime.wordsPerMinute": 200
+```
 
 ## Commands
 

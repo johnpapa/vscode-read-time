@@ -9,13 +9,11 @@ import {
   getExtension
 } from '../models';
 import { allSetupAndTeardown } from './lib/setup-teardown-test-suite';
-import { IReadTimeSettings } from '../models/interfaces';
 
 suite('Basic Extension Tests', () => {
   let extension = <vscode.Extension<any>>getExtension();
-  let originalValues = <IReadTimeSettings>{};
 
-  allSetupAndTeardown(originalValues);
+  allSetupAndTeardown();
 
   test('Extension loads in VSCode and is active', done => {
     // Hopefully a 200ms timeout will allow the extension to activate within Windows

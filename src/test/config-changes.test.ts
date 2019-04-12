@@ -1,21 +1,16 @@
 import * as vscode from 'vscode';
 import * as assert from 'assert';
-import { Commands, IReadTimeSettings } from '../models';
+import { Commands } from '../models';
 import { allSetupAndTeardown } from './lib/setup-teardown-test-suite';
-import {
-  updateGlobalConfiguration,
-  getEnabledSetting,
-  updateEnabledSetting
-} from '../configuration';
+import { getEnabledSetting, updateEnabledSetting } from '../configuration';
 import { getStatusBarItem } from '../statusbar';
 import { markdown } from './lib/test-data';
-import { TextEditorEdit, Position, workspace, window } from 'vscode';
+import { openFile } from './lib/open-file';
 
 export const executeCommand = vscode.commands.executeCommand;
 
 suite('changes to configuration', () => {
-  let originalValues = <IReadTimeSettings>{};
-  allSetupAndTeardown(originalValues);
+  allSetupAndTeardown();
 
   suite('when Read Time is disabled', () => {
     setup(async () => {
@@ -34,25 +29,13 @@ suite('changes to configuration', () => {
       assert.ok(result);
     });
 
-    test('when file is not markdown, the status bar has no text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'plaintext'
-      };
-      const doc = await workspace.openTextDocument(options);
+    test('when file is not valid, the status bar has no text', async () => {
       // Status bar should have no text (and thus hidden)
       const statusBarItem = getStatusBarItem();
       assert.ok(!statusBarItem.text);
     });
 
     test('when file is markdown, the status bar has no text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'markdown'
-      };
-      const doc = await workspace.openTextDocument(options);
       const statusBarItem = getStatusBarItem();
       assert.ok(!statusBarItem.text);
     });
@@ -75,35 +58,28 @@ suite('changes to configuration', () => {
       assert.ok(!result);
     });
 
-    test('when file is not markdown, the status bar has no text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'plaintext'
-      };
-      const doc = await workspace.openTextDocument(options);
+    test('when file is not valid, the status bar has no text', async () => {
+      const doc = await openFile('typescript', markdown.medium.text);
       // Status bar should have no text (and thus hidden)
       const statusBarItem = getStatusBarItem();
       assert.ok(!statusBarItem.text);
     });
 
     // TODO: status bar is never showing up under test!
-    test.only('when file is markdown, the status bar has text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'markdown'
-      };
-      // const uri = vscode.Uri.parse('markdown:/test-files/foo.md');
-      // const doc = await workspace.openTextDocument(uri);
-      const doc = await workspace.openTextDocument(options);
-      // const editor = await window.showTextDocument(doc, { preview: false });
-      const editor = await window.showTextDocument(doc, 1, true);
+    test.skip('when file is markdown, the status bar has text', async () => {
+      const doc = await openFile('markdown', markdown.medium.text);
       // Status bar should have text (and thus visible)
       const statusBarItem = getStatusBarItem();
       // statusBarItem.text = 'asdasdasdasd';
       // statusBarItem.show();
       assert.ok(!!statusBarItem.text && statusBarItem.text.length);
+    });
+
+    test('when file is yaml, the status bar has no text', async () => {
+      const doc = await openFile('yaml', markdown.medium.text);
+      // Status bar should have no text (and thus hidden)
+      const statusBarItem = getStatusBarItem();
+      assert.ok(!statusBarItem.text);
     });
   });
 });

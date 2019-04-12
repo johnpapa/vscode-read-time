@@ -12,6 +12,22 @@ export async function updateEnabledSetting(value: boolean) {
   return await updateGlobalConfiguration(Settings.Enabled, value);
 }
 
+export function getFileTypesSetting() {
+  return readConfiguration<string[]>(Settings.FileTypes);
+}
+
+export async function updateFileTypesSetting(value: string[]) {
+  return await updateGlobalConfiguration(Settings.FileTypes, value);
+}
+
+export function getWPMSetting() {
+  return readConfiguration<number>(Settings.WordsPerMinute);
+}
+
+export async function updateWPMSetting(value: number) {
+  return await updateGlobalConfiguration(Settings.WordsPerMinute, value);
+}
+
 export function readConfiguration<T>(
   setting: Settings,
   defaultValue?: T | undefined

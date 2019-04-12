@@ -16,4 +16,14 @@ export interface IConfiguration {
 
 export interface IReadTimeSettings {
   enabled: boolean;
+  fileTypes: string[];
+  wordsPerMinute: number;
+}
+
+export interface IExpandedReadingTimeData {
+  roundedMinutes: number;
+  text: string;
+  time: number;
+  words: number;
+  minutes: number;
 }
