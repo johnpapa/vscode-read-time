@@ -2,11 +2,12 @@
 
 All notable changes to the code will be documented in this file.
 
-## 0.1.11
+## 0.2.0
 
 Features
 
-- Create wordsPerMinute setting that defaults to 200
+- Create `wordsPerMinute` setting that defaults to 200
+- Created the `fileTypes` setting to indicate which files to estimate time to read
 
 Bug Fixes
 

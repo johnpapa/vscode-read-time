@@ -8,5 +8,6 @@ export enum Sections {
 
 export enum Settings {
   Enabled = 'enabled',
+  FileTypes = 'fileTypes',
   WordsPerMinute = 'wordsPerMinute'
 }

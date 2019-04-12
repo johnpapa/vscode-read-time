@@ -5,6 +5,7 @@ import {
   StatusBarItem
 } from 'vscode';
 import { ReadingTimeData } from './models';
+import { matchesFileType } from './file-type';
 
 let _statusBarItem: StatusBarItem;
 
@@ -32,7 +33,7 @@ export function updateStatusBar(
   readingTimeData: ReadingTimeData
 ) {
   const statusBarItem = getStatusBarItem();
-  if (document.languageId === 'markdown') {
+  if (matchesFileType(document.languageId)) {
     const roundedMinutes = Math.round(readingTimeData.minutes);
     statusBarItem.text = `$(book) ${roundedMinutes}`;
     statusBarItem.tooltip = `${roundedMinutes} minute read`;

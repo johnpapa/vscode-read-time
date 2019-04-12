@@ -2,10 +2,11 @@ import * as readingTime from 'reading-time';
 import { TextDocument } from 'vscode';
 import { ReadingTimeData } from './models';
 import { getWPMSetting } from './configuration';
+import { matchesFileType } from './file-type';
 
 export function getReadingTime(document: TextDocument) {
   let readingTimeData = new ReadingTimeData();
-  if (document.languageId === 'markdown') {
+  if (matchesFileType(document.languageId)) {
     const textToRead = document.getText();
     const wordsPerMinute = getWPMSetting();
     const options = { wordsPerMinute };

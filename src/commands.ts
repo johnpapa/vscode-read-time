@@ -3,6 +3,7 @@ import { getReadingTime } from './readtime';
 import { updateStatusBar, clearStatusBar } from './statusbar';
 import { updateEnabledSetting, getEnabledSetting } from './configuration';
 import { Logger } from './logging';
+import { matchesFileType } from './file-type';
 
 export function estimateReadTime() {
   const isEnabled = getEnabledSetting();
@@ -15,7 +16,7 @@ export function estimateReadTime() {
     return;
   }
   const { document } = editor;
-  if (document.languageId === 'markdown') {
+  if (matchesFileType(document.languageId)) {
     const readingTimeData = getReadingTime(document);
     updateStatusBar(document, readingTimeData);
     Logger.info(

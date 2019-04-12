@@ -2,7 +2,7 @@
   "name": "read-time",
   "displayName": "Read Time",
   "description": "Perfect for writers who want an estimate how for long it may take to read your markdown.",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "preview": true,
   "icon": "resources/icon.png",
   "galleryBanner": {
@@ -46,6 +46,16 @@
           "type": "boolean",
           "default": true,
           "description": "Specifies whether Read Time is enabled."
+        },
+        "readTime.fileTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "markdown"
+          ],
+          "description": "Specifies the types of files to estimate the read time."
         },
         "readTime.wordsPerMinute": {
           "type": "number",

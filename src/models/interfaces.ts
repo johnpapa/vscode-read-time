@@ -16,5 +16,6 @@ export interface IConfiguration {
 
 export interface IReadTimeSettings {
   enabled: boolean;
+  fileTypes: string[];
   wordsPerMinute: number;
 }
