@@ -8,7 +8,7 @@
 <!-- [![Build Status](https://johnpapa.visualstudio.com/vscode-read-time/_apis/build/status/VS%20Code%ReadTime%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-read-time/_build/latest?definitionId=3&branchName=master)
  -->
 
-![Read Time Icon](./resources/icon.png 'Read Time') A Visual Studio Code extension ideal for writers who want an estimate for how long it may take to read your markdown.
+![Read Time Icon](./resources/icon.png 'Read Time') A Visual Studio Code extension ideal for writers who want an estimate for how long it may take to read your articles.
 
 ## Install
 
@@ -26,6 +26,8 @@ Features include:
 - Display the estimated minutes to read your markdown file in the status bar
 - Hover over the status bar item to see the tooltip
 - Enable/disable the read time calculation and status bar item
+- Configure read time to display for other file types, beyond markdown
+- Adjust the words per minute (wpm) from the default 200 wpm
 
 ## Settings
 
