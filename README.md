@@ -23,7 +23,7 @@ Commands can be found in the command palette. Look for commands beginning with `
 
 Features include:
 
-- Display the estimated minutes to read your markdown file in the status bar
+- Display the estimated minutes to read your file in the status bar
 - Hover over the status bar item to see the tooltip
 - Enable/disable the read time calculation and status bar item
 - Configure read time to display for other file types, beyond markdown
