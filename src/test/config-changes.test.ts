@@ -34,25 +34,15 @@ suite('changes to configuration', () => {
       assert.ok(result);
     });
 
-    test('when file is not markdown, the status bar has no text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'plaintext'
-      };
-      const doc = await workspace.openTextDocument(options);
+    test('when file is not valid, the status bar has no text', async () => {
+      const doc = await openFile('plaintext', markdown.medium);
       // Status bar should have no text (and thus hidden)
       const statusBarItem = getStatusBarItem();
       assert.ok(!statusBarItem.text);
     });
 
     test('when file is markdown, the status bar has no text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'markdown'
-      };
-      const doc = await workspace.openTextDocument(options);
+      const doc = await openFile('markdown', markdown.medium);
       const statusBarItem = getStatusBarItem();
       assert.ok(!statusBarItem.text);
     });
@@ -75,29 +65,16 @@ suite('changes to configuration', () => {
       assert.ok(!result);
     });
 
-    test('when file is not markdown, the status bar has no text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'plaintext'
-      };
-      const doc = await workspace.openTextDocument(options);
+    test('when file is not valid, the status bar has no text', async () => {
+      const doc = await openFile('plaintext', markdown.medium);
       // Status bar should have no text (and thus hidden)
       const statusBarItem = getStatusBarItem();
       assert.ok(!statusBarItem.text);
     });
 
     // TODO: status bar is never showing up under test!
-    test.only('when file is markdown, the status bar has text', async () => {
-      // Open a file
-      const options = {
-        content: markdown.medium,
-        language: 'markdown'
-      };
-      // const uri = vscode.Uri.parse('markdown:/test-files/foo.md');
-      // const doc = await workspace.openTextDocument(uri);
-      const doc = await workspace.openTextDocument(options);
-      // const editor = await window.showTextDocument(doc, { preview: false });
+    test.skip('when file is markdown, the status bar has text', async () => {
+      const doc = await openFile('markdown', markdown.medium);
       const editor = await window.showTextDocument(doc, 1, true);
       // Status bar should have text (and thus visible)
       const statusBarItem = getStatusBarItem();
@@ -105,5 +82,21 @@ suite('changes to configuration', () => {
       // statusBarItem.show();
       assert.ok(!!statusBarItem.text && statusBarItem.text.length);
     });
+
+    test('when file is yaml, the status bar has no text', async () => {
+      const doc = await openFile('yaml', markdown.medium);
+      // Status bar should have no text (and thus hidden)
+      const statusBarItem = getStatusBarItem();
+      assert.ok(!statusBarItem.text);
+    });
   });
 });
+
+async function openFile(language: string, content: string) {
+  const options = {
+    content,
+    language
+  };
+  const doc = await workspace.openTextDocument(options);
+  return doc;
+}
