@@ -1,7 +1,7 @@
 # Read Time for Visual Studio Code
 
-[![Badge for version for Visual Studio Code extension johnpapa.read-time](https://vsmarketplacebadge.apphb.com/version/johnpapa.read-time.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&wt.mc_id=vscodereadtime-github-jopapa) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time) [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
+[![Badge for version for Visual Studio Code extension johnpapa.read-time](https://vsmarketplacebadge.apphb.com/version/johnpapa.read-time.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&wt.mc_id=vscodereadtime-github-jopapa) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=vscodereadtime-github-jopapa)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=vscodereadtime-github-jopapa) [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 
 <!-- [![Greenkeeper badge](https://badges.greenkeeper.io/johnpapa/vscode-read-time.svg)](https://greenkeeper.io/) -->
 
