@@ -1,12 +1,7 @@
 # Read Time for Visual Studio Code
 
-[![Badge for version for Visual Studio Code extension johnpapa.read-time](https://vsmarketplacebadge.apphb.com/version/johnpapa.read-time.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&wt.mc_id=vscodereadtime-github-jopapa) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=vscodereadtime-github-jopapa)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=vscodereadtime-github-jopapa) [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
-
-<!-- [![Greenkeeper badge](https://badges.greenkeeper.io/johnpapa/vscode-read-time.svg)](https://greenkeeper.io/) -->
-
-<!-- [![Build Status](https://johnpapa.visualstudio.com/vscode-read-time/_apis/build/status/VS%20Code%ReadTime%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-read-time/_build/latest?definitionId=3&branchName=master&WT.mc_id=vscodereadtime-github-jopapa)
- -->
+[![Badge for version for Visual Studio Code extension johnpapa.read-time](https://vsmarketplacebadge.apphb.com/version/johnpapa.read-time.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=javascript-0000-jopapa) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=javascript-0000-jopapa)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.read-time.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.read-time&WT.mc_id=javascript-0000-jopapa) [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 
 ![Read Time Icon](./resources/icon.png 'Read Time') A Visual Studio Code extension ideal for writers who want an estimate for how long it may take to read your articles.
 
@@ -91,7 +86,7 @@ See the [CHANGELOG](CHANGELOG.md) for the latest changes.
 
 Inspiration comes in many forms. These folks and teams have contributed either through ideas, issues, pull requests, or guidance. Thank you!
 
-- The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=vscodereadtime-github-jopapa)
+- The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?WT.mc_id=javascript-0000-jopapa)
 
 - Here are some great [examples for extensions](https://github.com/Microsoft/vscode-extension-samples) from the VS Code team
 
@@ -103,7 +98,7 @@ Then you can run the debugger for the launch configuration `Run Extension`. Set 
 
 ## Resources
 
-- [Get VS Code](https://code.visualstudio.com/?wt.mc_id=vscodereadtime-github-jopapa)
-- [Create your first VS Code extension](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=vscodereadtime-github-jopapa)
-- [VS Code Extension API](https://code.visualstudio.com/api/references/vscode-api?wt.mc_id=vscodereadtime-github-jopapa)
-- [Learn how to add WebPack bundles to your favorite extensions](https://code.visualstudio.com/updates/v1_32#_bundling-extensions-with-webpack?wt.mc_id=vscodereadtime-github-jopapa)
+- [Get VS Code](https://code.visualstudio.com/?WT.mc_id=javascript-0000-jopapa)
+- [Create your first VS Code extension](https://code.visualstudio.com/api/get-started/your-first-extension?WT.mc_id=javascript-0000-jopapa)
+- [VS Code Extension API](https://code.visualstudio.com/api/references/vscode-api?WT.mc_id=javascript-0000-jopapa)
+- [Learn how to add WebPack bundles to your favorite extensions](https://code.visualstudio.com/updates/v1_32?WT.mc_id=javascript-0000-jopapa#_bundling-extensions-with-webpack?wt.mc_id=vscodereadtime-github-jopapa)
