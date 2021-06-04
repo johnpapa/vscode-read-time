@@ -28,24 +28,38 @@
   ],
   "activationEvents": [
     "*",
-    "onCommand:read-time.estimateReadTime",
-    "onCommand:read-time.toggleEnable"
+    "onCommand:readTime.toggleEnable"
   ],
   "main": "./dist/extension",
   "contributes": {
     "commands": [
       {
-        "command": "read-time.toggleEnable",
+        "command": "readTime.toggleEnable",
         "title": "Toggle to Enable/Disable",
         "category": "Read Time"
       }
     ],
     "configuration": {
       "properties": {
-        "read-time.enabled": {
+        "readTime.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Specifies whether Read Time is enabled."
+        },
+        "readTime.fileTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "markdown"
+          ],
+          "description": "Specifies the types of files to estimate the read time."
+        },
+        "readTime.wordsPerMinute": {
+          "type": "number",
+          "default": 200,
+          "description": "Specifies the estimated words per minute that a user may read."
         }
       }
     }
@@ -58,20 +72,20 @@
     "watch": "webpack --mode none --watch",
     "postinstall": "node node_modules/vscode/bin/install",
     "just-test": "node node_modules/vscode/bin/test",
-    "test-compile": "tsc -p ./ && npm run && webpack",
+    "test-compile": "tsc -p ./ && npm run webpack",
     "test": "npm run test-compile && node node_modules/vscode/bin/test"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.42",
     "@types/node": "^10.12.21",
     "ts-loader": "^5.3.3",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.1",
-    "vscode": "^1.1.28",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.3",
+    "vscode": "^1.1.33",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "reading-time": "^1.1.3"
+    "reading-time": "^1.2.0"
   }
 }

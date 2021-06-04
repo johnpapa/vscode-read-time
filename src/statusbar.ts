@@ -4,28 +4,41 @@ import {
   TextDocument,
   StatusBarItem
 } from 'vscode';
+import { ReadingTimeData } from './models';
+import { matchesFileType } from './file-type';
 
-let statusBarItem: StatusBarItem;
+let _statusBarItem: StatusBarItem;
+
+export function getStatusBarItem() {
+  if (!_statusBarItem) {
+    const priority = 2; // High priority since this is important in a markdown file
+    _statusBarItem = window.createStatusBarItem(
+      StatusBarAlignment.Right,
+      priority
+    );
+  }
+  return _statusBarItem;
+}
 
 export function clearStatusBar() {
-  createStatusBar();
+  const statusBarItem = getStatusBarItem();
 
   statusBarItem.text = '';
+  statusBarItem.tooltip = '';
   statusBarItem.hide();
 }
 
-export function updateStatusBar(document: TextDocument, text: string) {
-  createStatusBar();
-  if (document.languageId === 'markdown') {
-    statusBarItem.text = `$(book) ${text}`;
+export function updateStatusBar(
+  document: TextDocument,
+  readingTimeData: ReadingTimeData
+) {
+  const statusBarItem = getStatusBarItem();
+  if (matchesFileType(document.languageId)) {
+    const roundedMinutes = Math.round(readingTimeData.minutes);
+    statusBarItem.text = `$(book) ${roundedMinutes}`;
+    statusBarItem.tooltip = `${roundedMinutes} minute read`;
     statusBarItem.show();
   } else {
     clearStatusBar();
-  }
-}
-
-function createStatusBar() {
-  if (!statusBarItem) {
-    statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
   }
 }

@@ -1,16 +1,31 @@
 import * as vscode from 'vscode';
-import { Sections, Settings, extSuffix } from './models';
+import { Sections, Settings, extensionShortName } from './models';
 import { Logger } from './logging';
 
 const { workspace } = vscode;
 
 export function getEnabledSetting() {
-  let foo = readConfiguration<boolean>(Settings.Enabled);
-  return foo;
+  return readConfiguration<boolean>(Settings.Enabled);
 }
 
 export async function updateEnabledSetting(value: boolean) {
   return await updateGlobalConfiguration(Settings.Enabled, value);
+}
+
+export function getFileTypesSetting() {
+  return readConfiguration<string[]>(Settings.FileTypes);
+}
+
+export async function updateFileTypesSetting(value: string[]) {
+  return await updateGlobalConfiguration(Settings.FileTypes, value);
+}
+
+export function getWPMSetting() {
+  return readConfiguration<number>(Settings.WordsPerMinute);
+}
+
+export async function updateWPMSetting(value: number) {
+  return await updateGlobalConfiguration(Settings.WordsPerMinute, value);
 }
 
 export function readConfiguration<T>(
@@ -28,7 +43,7 @@ export async function updateGlobalConfiguration<T>(
   value?: T | undefined
 ) {
   let config = vscode.workspace.getConfiguration();
-  const section = `${extSuffix}.${setting}`;
+  const section = `${extensionShortName}.${setting}`;
   Logger.info('Updating the user settings with the following changes:');
   Logger.info(`${section} = ${value}`, true);
   return await config.update(section, value, vscode.ConfigurationTarget.Global);
